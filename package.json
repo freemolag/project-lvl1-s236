@@ -1,6 +1,6 @@
 {
   "name": "brain-games-dmitry-sorokin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "project-lvl1-s236",
   "main": "index.js",
   "bin": {
@@ -29,6 +29,14 @@
     "babel-cli": "*",
     "babel-core": "*",
     "babel-preset-env": "*",
-    "babel-preset-stage-0": "*"
+    "babel-preset-stage-0": "*",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
   }
 }
