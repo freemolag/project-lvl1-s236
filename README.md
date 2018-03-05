@@ -1,2 +1,2 @@
 # project-lvl1-s236
-[![Maintainability](https://api.codeclimate.com/v1/badges/c573ece2265f6d97eabd/maintainability)](https://codeclimate.com/github/freemolag/project-lvl1-s236/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c573ece2265f6d97eabd/maintainability)](https://codeclimate.com/github/freemolag/project-lvl1-s236/maintainability)    [![Test Coverage](https://api.codeclimate.com/v1/badges/c573ece2265f6d97eabd/test_coverage)](https://codeclimate.com/github/freemolag/project-lvl1-s236/test_coverage)    [![Build Status](https://travis-ci.org/freemolag/project-lvl1-s236.svg?branch=master)](https://travis-ci.org/freemolag/project-lvl1-s236)
