@@ -7,12 +7,11 @@ console.log(`Hello, ${userName}!`);
 export const brainEven = () => {
   for (let i = 0; i < 3; i += 1) {
     const max = 100;
-    const randomNumber = max => Math.floor(Math.random() * max);
-    const number = randomNumber(max);
-    console.log(`Question: ${number}`);
+    const randomNumber = Math.floor(Math.random() * max);
+    console.log(`Question: ${randomNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const isEvenNumber = number => number % 2 === 0;
-    const expectedAnswer = isEvenNumber(number) ? 'yes' : 'no';
+    const isEvenNumber = () => randomNumber % 2 === 0;
+    const expectedAnswer = isEvenNumber() ? 'yes' : 'no';
     if (userAnswer === expectedAnswer) {
       console.log('Correct!');
     } else {
