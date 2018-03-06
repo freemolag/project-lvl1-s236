@@ -1,6 +1,9 @@
 install:
 	npm install
 
+build:
+	npm run build
+
 start:
 	npm run babel-node -- src/bin/brain-games.js
 
