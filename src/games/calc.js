@@ -7,20 +7,20 @@ const gamePlay = () => {
   const randomNumTwo = Math.floor(Math.random() * 10);
   const randomNumOperator = Math.floor(Math.random() * 100);
   let operator = '';
-  let answer;
+  let mathAnswer;
   if (randomNumOperator < 33) {
     operator = '+';
-    answer = randomNumOne + randomNumTwo;
+    mathAnswer = randomNumOne + randomNumTwo;
   } else if (randomNumOperator > 66) {
     operator = '-';
-    answer = randomNumOne - randomNumTwo;
+    mathAnswer = randomNumOne - randomNumTwo;
   } else {
     operator = '*';
-    answer = randomNumOne * randomNumTwo;
+    mathAnswer = randomNumOne * randomNumTwo;
   }
-  const expression = `${randomNumOne} ${operator} ${randomNumTwo}`;
-  const isEqual = String(answer);
-  return cons(expression, isEqual);
+  const gameQuestion = `${randomNumOne} ${operator} ${randomNumTwo}`;
+  const userAnswer = String(mathAnswer);
+  return cons(gameQuestion, userAnswer);
 };
 const startCalc = () => gameInterface(gameRules, gamePlay);
 
