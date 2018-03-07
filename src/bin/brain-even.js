@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-import { intro, rule, brainEven, userName } from '..';
+import startEven from '../games/even';
 
-intro();
-rule();
-brainEven();
-userName();
+startEven();

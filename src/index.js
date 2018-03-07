@@ -1,22 +1,20 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 
-export const intro = console.log('Welcome to the Brain Games!');
-export const rule = console.log('Answer "yes" if number even otherwise answer "no".');
-export const userName = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${userName}!`);
-export const brainEven = () => {
+const gameInterface = (gameRules, gamePlay) => {
+  console.log(`Welcome to the Brain Games!\n${gameRules}\n`);
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!\n`);
   for (let i = 0; i < 3; i += 1) {
-    const max = 100;
-    const randomNumber = Math.floor(Math.random() * max);
-    console.log(`Question: ${randomNumber}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    const isEvenNumber = () => randomNumber % 2 === 0;
-    const expectedAnswer = isEvenNumber() ? 'yes' : 'no';
-    if (userAnswer === expectedAnswer) {
-      console.log('Correct!');
+    const pair = gamePlay(car, cdr);
+    const userAnswer = readlineSync.question(`Question: ${car(pair)}\nYour answer: `);
+    if (userAnswer === cdr(pair)) {
+      console.log('Correct!\n');
     } else {
-      console.log('Wrong!');
+      console.log('Wrong!\n');
     }
   }
   console.log(`Congratulations, ${userName}!`);
 };
+
+export default gameInterface;
