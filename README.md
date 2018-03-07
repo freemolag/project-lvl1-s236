@@ -10,11 +10,17 @@ $ npm i brain-games-dmitry-sorokin -g
 ## Run calc game
 
 ```
-$ make start-calc
+$ brain-calc
 ```
 
 ## Run even game
 
 ```
-$ make start-even
+$ brain-even
+```
+
+## Run gcd game
+
+```
+$ brain-gcd
 ```
