@@ -5,19 +5,17 @@ const gameRules = 'Balance the given number.';
 const length = str => str.length;
 const gamePlay = () => {
   const randomNumber = (Math.floor(Math.random() * 1000)) + 10;
-  const str = String(randomNumber);
-  let summ = 0;
+  const len = length(String(randomNumber));
   let result = '';
-  for (let i = 0; i < length(str); i += 1) {
-    summ += Number(str[i]);
-  }
-  const rest = summ % length(str);
-  const minDigit = String((summ - rest) / length(str));
-  const Digit = minDigit.repeat(length(str));
-  const first = Digit.slice(0, length(str) - rest);
-  const second = Digit.slice(length(str) - rest, length(str));
-  for (let j = 0; j < length(second); j += 1) {
-    result += Number(second[j]) + 1;
+  const arr = Array.from(String(randomNumber)).map(Number);
+  const total = arr.reduce((a, b) => a + b, 0);
+  const rest = total % len;
+  const minDigit = String((total - rest) / len);
+  const digit = minDigit.repeat(len);
+  const first = digit.slice(0, len - rest);
+  const second = digit.slice(len - rest, len);
+  for (let j = 0; j < rest; j += 1) {
+    result += String(Number(second[j]) + 1);
   } return cons(randomNumber, first + result);
 };
 
