@@ -14,7 +14,7 @@ const findBalance = (num) => {
   if (remainder === 0) {
     return newArr.join('');
   }
-  return newArr.fill(average + 1, newArr.length - remainder, newArr.length).join('');
+  return newArr.fill(average + 1, length(newArr) - remainder, length(newArr)).join('');
 };
 
 const generateQuestion = () => {
