@@ -1,11 +1,12 @@
 import { cons } from 'hexlet-pairs';
 import gameInterface from '..';
+import { randomNumber } from '../random';
 
 const gameRules = 'What is the result of the expression?';
-const gamePlay = () => {
-  const randomNumOne = Math.floor(Math.random() * 100);
-  const randomNumTwo = Math.floor(Math.random() * 10);
-  const randomNumOperator = Math.floor(Math.random() * 100);
+const generateQuestion = () => {
+  const randomNumOne = randomNumber();
+  const randomNumTwo = randomNumber();
+  const randomNumOperator = randomNumber();
   let operator = '';
   let mathAnswer;
   if (randomNumOperator < 33) {
@@ -22,6 +23,6 @@ const gamePlay = () => {
   const userAnswer = String(mathAnswer);
   return cons(gameQuestion, userAnswer);
 };
-const startCalc = () => gameInterface(gameRules, gamePlay);
+const startCalc = () => gameInterface(gameRules, generateQuestion);
 
 export default startCalc;

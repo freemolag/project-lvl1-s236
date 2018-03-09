@@ -1,12 +1,13 @@
 import { cons } from 'hexlet-pairs';
 import gameInterface from '..';
+import { randomNumber } from '../random';
 
 const gameRules = 'Answer "yes" if number even otherwise answer "no".';
-const gamePlay = () => {
-  const randomNumber = Math.floor(Math.random() * 100);
-  const answer = randomNumber % 2 === 0 ? 'yes' : 'no';
-  return cons(`${randomNumber}`, answer);
+const generateQuestion = () => {
+  const random = randomNumber();
+  const answer = random % 2 === 0 ? 'yes' : 'no';
+  return cons(`${random}`, answer);
 };
-const startEven = () => gameInterface(gameRules, gamePlay);
+const startEven = () => gameInterface(gameRules, generateQuestion);
 
 export default startEven;

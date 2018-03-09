@@ -1,20 +1,21 @@
 import { cons } from 'hexlet-pairs';
 import gameInterface from '..';
+import { randomNumTen } from '../random';
 
 const gameRules = 'What number is missing in this progression?';
 
-const randomNumber = () => Math.floor(Math.random() * 10);
+// const randomNumber = () => Math.floor(Math.random() * 100);
 
-const gamePlay = () => {
+const generateQuestion = () => {
   const lengthOfProgression = 10;
-  const start = randomNumber();
-  const step = randomNumber() + 2;
-  const hidden = randomNumber();
+  const start = randomNumTen();
+  const step = randomNumTen() + 2;
+  const hidden = randomNumTen();
   const num = Array(lengthOfProgression).fill(null).map((e, i) => start + (step * i));
   const question = num.map((e, i) => (i === hidden ? '..' : e)).join(' ');
   const answer = String(num[hidden]);
   return cons(question, answer);
 };
-const startProgression = () => gameInterface(gameRules, gamePlay);
+const startProgression = () => gameInterface(gameRules, generateQuestion);
 
 export default startProgression;

@@ -1,24 +1,28 @@
 import { cons } from 'hexlet-pairs';
 import gameInterface from '..';
+import { randomNumber } from '../random';
 
 const gameRules = 'Balance the given number.';
 const length = str => str.length;
-const gamePlay = () => {
-  const randomNumber = (Math.floor(Math.random() * 1000)) + 10;
-  const len = length(String(randomNumber));
-  let result = '';
-  const arr = Array.from(String(randomNumber)).map(Number);
-  const total = arr.reduce((a, b) => a + b, 0);
-  const rest = total % len;
-  const minDigit = String((total - rest) / len);
-  const digit = minDigit.repeat(len);
-  const first = digit.slice(0, len - rest);
-  const second = digit.slice(len - rest, len);
-  for (let j = 0; j < rest; j += 1) {
-    result += String(Number(second[j]) + 1);
-  } return cons(randomNumber, first + result);
+
+const findBalance = (num) => {
+  const numbers = `${num}`.split('').map(x => Number(x));
+  const total = numbers.reduce(((a, b) => a + b), 0);
+  const average = Math.floor(total / length(numbers));
+  const remainder = total % length(numbers);
+  const newArr = numbers.slice().fill(average);
+  if (remainder === 0) {
+    return newArr.join('');
+  }
+  return newArr.fill(average + 1, newArr.length - remainder, newArr.length).join('');
 };
 
-const startEven = () => gameInterface(gameRules, gamePlay);
+const generateQuestion = () => {
+  const random = randomNumber() * 13;
+  const correctAnswer = findBalance(random);
+  return cons(random, correctAnswer);
+};
 
-export default startEven;
+const startBalance = () => gameInterface(gameRules, generateQuestion);
+
+export default startBalance;

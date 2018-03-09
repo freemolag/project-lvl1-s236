@@ -1,5 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import gameInterface from '..';
+import { randomNumber } from '../random';
 
 const gameRules = 'Is this number prime?';
 
@@ -10,12 +11,12 @@ const isPrime = (num) => {
   } return true;
 };
 
-const gamePlay = () => {
-  const randomNumber = Math.floor((Math.random() * 100) + 1);
-  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
-  return cons(randomNumber, correctAnswer);
+const generateQuestion = () => {
+  const random = randomNumber() + 1;
+  const correctAnswer = isPrime(random) ? 'yes' : 'no';
+  return cons(random, correctAnswer);
 };
 
-const startPrime = () => gameInterface(gameRules, gamePlay);
+const startPrime = () => gameInterface(gameRules, generateQuestion);
 
 export default startPrime;
