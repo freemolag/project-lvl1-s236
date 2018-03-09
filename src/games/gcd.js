@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import gameInterface from '..';
+import gameLogic from '..';
 import { randomNumber } from '../random';
 
 const gameRules = 'Find the greatest common divisor of given numbers.';
@@ -16,6 +16,6 @@ const generateQuestion = () => {
   const correctAnswer = String(gcd(randomNumOne, randomNumTwo));
   return cons(`${randomNumOne} ${randomNumTwo}`, correctAnswer);
 };
-const startGcd = () => gameInterface(gameRules, generateQuestion);
+const startGcd = () => gameLogic(gameRules, generateQuestion);
 
 export default startGcd;

@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import gameInterface from '..';
+import gameLogic from '..';
 import { randomNumber } from '../random';
 
 const gameRules = 'Balance the given number.';
@@ -23,6 +23,6 @@ const generateQuestion = () => {
   return cons(random, correctAnswer);
 };
 
-const startBalance = () => gameInterface(gameRules, generateQuestion);
+const startBalance = () => gameLogic(gameRules, generateQuestion);
 
 export default startBalance;

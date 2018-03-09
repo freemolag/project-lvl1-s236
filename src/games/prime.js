@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import gameInterface from '..';
+import gameLogic from '..';
 import { randomNumber } from '../random';
 
 const gameRules = 'Is this number prime?';
@@ -17,6 +17,6 @@ const generateQuestion = () => {
   return cons(random, correctAnswer);
 };
 
-const startPrime = () => gameInterface(gameRules, generateQuestion);
+const startPrime = () => gameLogic(gameRules, generateQuestion);
 
 export default startPrime;

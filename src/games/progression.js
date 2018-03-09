@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import gameInterface from '..';
+import gameLogic from '..';
 import { randomNumTen } from '../random';
 
 const gameRules = 'What number is missing in this progression?';
@@ -16,6 +16,6 @@ const generateQuestion = () => {
   const answer = String(num[hidden]);
   return cons(question, answer);
 };
-const startProgression = () => gameInterface(gameRules, generateQuestion);
+const startProgression = () => gameLogic(gameRules, generateQuestion);
 
 export default startProgression;

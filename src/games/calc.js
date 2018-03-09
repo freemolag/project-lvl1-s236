@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import gameInterface from '..';
+import gameLogic from '..';
 import { randomNumber } from '../random';
 
 const gameRules = 'What is the result of the expression?';
@@ -23,6 +23,6 @@ const generateQuestion = () => {
   const userAnswer = String(mathAnswer);
   return cons(gameQuestion, userAnswer);
 };
-const startCalc = () => gameInterface(gameRules, generateQuestion);
+const startCalc = () => gameLogic(gameRules, generateQuestion);
 
 export default startCalc;
