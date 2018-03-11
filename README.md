@@ -7,6 +7,10 @@
 $ npm i brain-games-dmitry-sorokin -g
 ```
 
+## Even game example
+
+[![asciicast](https://asciinema.org/a/dpYfqTleFcYuffoxyG4XtO56p.png)](https://asciinema.org/a/dpYfqTleFcYuffoxyG4XtO56p)
+
 ## Run calc game
 
 ```
